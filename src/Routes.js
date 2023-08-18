@@ -1,8 +1,7 @@
-import LoginPage from "./pages/LoginPage.vue";
-import UsersPage from "./pages/UsersPage.vue";
-import SongsPage from "./pages/SongsPage.vue";
-import CategoriesPage from './Pages/CategoriesPage.vue'
-
+import LoginPage from "./Pages/LoginPage.vue";
+import UsersPage from "./Pages/UsersPage.vue";
+import SongsPage from "./Pages/SongsPage.vue";
+import CategoriesPage from "./Pages/CategoriesPage.vue";
 
 export const routes = [
   {
