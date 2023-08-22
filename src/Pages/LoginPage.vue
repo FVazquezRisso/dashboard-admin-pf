@@ -8,23 +8,28 @@ const email = ref('')
 const title = ref('')
 const message = ref('')
 const codeInput = ref()
-let verificationCode 
+let verificationCode
 const router = useRouter()
+const isAdmin = localStorage.getItem('isAdmin')
+
+if (isAdmin) {
+  router.push('/users')
+}
 
 const handleChangeInput = (event) => {
-  const {name, value} = event.target
+  const { name, value } = event.target
 
   if (name === 'email') {
     email.value = value
   } else {
     codeInput.value = value
   }
-} 
+}
 
 const checkVerificationCodeMatch = () => {
   if (codeInput.value == verificationCode) {
     localStorage.setItem('isAdmin', true)
-    router.push('/home')
+    router.push('/users')
   } else {
     alert('Código de verificación incorrecto.')
     isActiveInput.value = false
@@ -34,7 +39,7 @@ const checkVerificationCodeMatch = () => {
 const handleShowInput = async () => {
   try {
     const response = await spotyFansApi.post('/dashboard-admin/verifyemail', { email: email.value })
-    
+
     if (response.status === 200) {
       title.value = 'Código enviado'
       message.value = `Se ha enviado el código de verificación a ${email.value}.`
@@ -55,11 +60,14 @@ const handleShowInput = async () => {
   <main class="main-container">
     <h2 class="login-title">Login</h2>
     <label>
-      <input type="email" name="email" placeholder="email@example.com" class="input input-bordered w-full max-w-xs" @input="handleChangeInput" />
-      <button class="btn" onclick="my_modal_1.showModal()" @click="handleShowInput" :disabled="isActiveInput" :class="{ 'btn-disabled': isActiveInput }">Send Code</button>
-    </label>
-    <label v-if="isActiveInput">
-      <input type="text" name="code" placeholder="Code" class="input input-bordered w-full max-w-xs" @input="handleChangeInput" />
+        <input type="email" name="email" placeholder="email@example.com" class="input input-bordered w-full max-w-xs"
+          @input="handleChangeInput" />
+        <button class="btn" onclick="my_modal_1.showModal()" @click="handleShowInput" :disabled="isActiveInput"
+          :class="{ 'btn-disabled': isActiveInput }">Send Code</button>
+      </label>
+      <label v-if="isActiveInput">
+        <input type="text" name="code" placeholder="Code" class="input input-bordered w-full max-w-xs"
+          @input="handleChangeInput" />
       <button class="btn" @click="checkVerificationCodeMatch">Verify Code</button>
     </label>
   </main>
@@ -117,5 +125,4 @@ const handleShowInput = async () => {
 
 .close-button {
   margin-top: 1rem;
-}
-</style>
+}</style>

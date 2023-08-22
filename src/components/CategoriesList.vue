@@ -47,7 +47,7 @@ onMounted(fetchCategories);
     <div class="create-button-container">
       <button v-if="!isCreating" class="btn" @click="handleClickCreate">Create Category</button>
       <p v-if="isCreating" class="name-input">Name:</p>
-      <input v-if="isCreating" class="input" type="text" placeholder="Category Name" @input="handleInput">
+      <input v-if="isCreating" class="input" type="text" placeholder="Category Name" @input="handleInput" autofocus>
       <button v-if="isCreating" class="btn-creating" @click="handleClickPost">Create</button>
     </div>
     <CategoryCard v-for="category in categories" :key="category.id" :id="category.id" :name="category.name"
