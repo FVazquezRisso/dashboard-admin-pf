@@ -7,7 +7,7 @@ const songs = ref([]);
 
 const fetchSongs = async () => {
   try {
-    const response = await spotyFansApi.get('/music/all');
+    const response = await spotyFansApi.get('/music/all?isAdmin=true');
     if (response.status === 200) songs.value = response.data;
   } catch (error) {
     console.error(error.message);

@@ -9,7 +9,7 @@ const inputValue = ref('')
 
 const fetchCategories = async () => {
   try {
-    const response = await spotyFansApi.get('/category');
+    const response = await spotyFansApi.get('/category?isAdmin=true');
     if (response.status === 200) categories.value = response.data;
   } catch (error) {
     console.error(error.message);
