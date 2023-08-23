@@ -6,7 +6,7 @@
     <router-link class="link" exact-active-class="active-link" to="/users">Users</router-link>
     <router-link class="link" exact-active-class="active-link" to="/songs">Songs</router-link>
     <router-link class="link" exact-active-class="active-link" to="/categories">Categories</router-link>
-    <a class="link" href="https://pf-spooty-fans-two.vercel.app">Exit</a>
+    <a class="link" href="https://pf-spooty-fans-two.vercel.app/home">Exit</a>
   </div>
 </template>
 
