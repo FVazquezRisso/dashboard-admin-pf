@@ -18,7 +18,7 @@ onMounted(fetchUsers);
 </script>
 
 <template>
-  <div class="container">
+  <div class="container-users">
       <div class="properties-container">
         <p class="id">ID</p>
         <p class="username">Username</p>
@@ -26,19 +26,21 @@ onMounted(fetchUsers);
         <p class="action">Action</p>
       </div>
       <UserCard v-for="user in users" :key="user.id" :id="user.id" :username="user.username" :email="user.email" :is-active="user.isActive" />
-    </div>
+  </div>
 </template>
 
 <style scoped>
 
-.container::-webkit-scrollbar {
+.container-users::-webkit-scrollbar {
   display: none;
 }
-.container {
+.container-users {
   max-height: 75vh;
   border: 2px solid white;
   border-radius: 1rem;
   overflow-y: auto;
+  backdrop-filter: blur(6px);
+  box-shadow: inset 0 2px 4px 0 rgb(255, 255, 255);
 }
 
 .properties-container {

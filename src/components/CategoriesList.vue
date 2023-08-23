@@ -65,6 +65,8 @@ onMounted(fetchCategories);
   border: 2px solid white;
   border-radius: 1rem;
   overflow-y: auto;
+  backdrop-filter: blur(6px);
+  box-shadow: inset 0 2px 4px 0 rgb(255, 255, 255);
 }
 
 .properties-container {

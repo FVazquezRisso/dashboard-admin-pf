@@ -19,7 +19,9 @@
   justify-content: center;
   gap: 1rem;
   border: 2px solid white;
-  border-radius: 1rem
+  border-radius: 1rem;
+  backdrop-filter: blur(6px);
+  box-shadow: inset 0 2px 4px 0 rgb(255, 255, 255);
 }
 
 .link {

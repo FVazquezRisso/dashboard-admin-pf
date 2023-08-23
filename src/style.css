@@ -42,6 +42,12 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-image: url("./assets/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  user-select: none;
 }
 
 h1 {

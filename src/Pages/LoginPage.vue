@@ -84,10 +84,18 @@ const handleShowInput = async () => {
 </template>
 
 <style scoped>
+
+
 .main-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding: 2rem;
+  border: 2px solid white;
+  border-radius: 1rem;
+  backdrop-filter: blur(6px);
+  box-shadow: inset 0 2px 4px 0 rgb(255, 255, 255);
+  background-color: #ffffff10;
 }
 
 .login-title {
@@ -99,11 +107,41 @@ const handleShowInput = async () => {
 .input {
   margin: 1rem;
   padding: .5rem;
-  border-radius: .75rem;
+  color: white;
+  border: 1px solid white;
+  border-radius: 1rem;
+  background-color: transparent;
+  transition-property: all;
+  transition-duration: .1s;
+  transition-timing-function: ease-in-out;
+}
+
+.input:focus {
+  outline: none;
+  transform: scale(1.1);
+  box-shadow: 0 13px 36px 0 #000;
+}
+
+.input::placeholder {
+  color: #ffffff70;
 }
 
 .btn {
-  border-radius: .75rem;
+  border-radius: 5rem;
+  background-color: transparent;
+  border: none;
+  transition-property: all;
+  transition-duration: .15s;
+  transition-timing-function: ease-in-out;
+}
+
+.btn:hover {
+  box-shadow: inset 0 2px 4px 0 rgb(255, 255, 255);
+  transform: scale(1.05);
+}
+
+.btn:focus {
+  outline: none;
 }
 
 .btn-disabled {
@@ -115,6 +153,11 @@ const handleShowInput = async () => {
 .message {
   padding: 2rem;
   border-radius: .75rem;
+  border: 2px solid white;
+  border-radius: 1rem;
+  backdrop-filter: blur(6px);
+  box-shadow: inset 0 2px 4px 0 rgb(255, 255, 255);
+  background-color: #ffffff10;
 }
 
 .message-title {
@@ -124,5 +167,8 @@ const handleShowInput = async () => {
 }
 
 .close-button {
-  margin-top: 1rem;
-}</style>
+  margin-top: .5rem;
+  border: none;
+}
+
+</style>

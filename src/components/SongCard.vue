@@ -78,6 +78,14 @@ const handleCancelChangeName = () => {
   margin: 1rem;
   border: 2px solid white;
   border-radius: 1rem;
+  transition-property: all;
+  transition-duration: .1s;
+  transition-timing-function: ease-in-out;
+}
+
+.container:hover {
+  box-shadow: inset 0 2px 4px 0 rgb(255, 255, 255);
+  transform: scale(1.02);
 }
 
 .container-disabled {
